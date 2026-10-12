@@ -1,0 +1,1 @@
+{"bin":{"ai-game-builder":"./bin/ai-game-builder.js"},"description":"一句话把网页小游戏从想法变成可玩文件：按模板生成，AI 按章节填空","engines":{"node":">=18"},"license":"MIT","name":"ai-game-builder","type":"module","version":"0.1.0"}
