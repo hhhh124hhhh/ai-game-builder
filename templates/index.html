@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<title>GAME_TITLE</title>
+<style>
+  html, body { margin: 0; padding: 0; overflow: hidden; background: #0a0e24;
+    touch-action: none; -webkit-user-select: none; user-select: none; }
+  #game-container { position: fixed; inset: 0; }
+  canvas { display: block; }
+</style>
+<!-- 3D 游戏在此插入 importmap：{"imports":{"three":"https://esm.sh/three@0.160.0","three/":"https://esm.sh/three@0.160.0/"}} -->
+<!-- 平台插桩位（可选链注入，游戏不依赖平台）：里程碑上报如 window.GameBridge?.logProgress('level_complete', {...}) -->
+</head>
+<body>
+<div id="game-container"></div>
+<script type="module" src="main.js"></script>
+</body>
+</html>
