@@ -82,3 +82,7 @@ InputController 统一 touch 滑动 + 鼠标拖拽 + 键盘，阈值 28px，对�
 
 - 自适应画质：移动端降阴影（PCF）、关抗锯齿、降灯光强度
 - Three.js 版本：生成时取当前稳定版并在 importmap pin 死（已发布游戏不受上游影响）
+
+## 进阶（带探索/大世界/多人时）
+
+见 `template-3d-advanced.md`：种子 PRNG 双流 + 迷宫生成 + InstancedMesh 墙体 + 胶囊物理 + 轴分离滑墙 + 动画状态机 + PBR 贴图规范 + 性能管理。
