@@ -60,3 +60,25 @@ InputController 统一 touch 滑动 + 鼠标拖拽 + 键盘，阈值 28px，对�
 4. **战斗必须有悬念**：不许 1 换 1 纯消耗定胜负（至少引入伤害/攻速/克制其一）。
 5. **数值自检**：开局数值必须能活过第一个敌人（最小收益路径 vs 最大敌人强度）。
 6. **注释必须与代码一致**，写错注释不如不写。
+
+## 视觉规范（2026-10-13 补入，第一档配方强制，第二档 aspirational）
+
+### 第一档（强制，几何体也能好看）
+
+1. **三点布光**：环境光 0.6 + 主方向光 0.8（带阴影，2048 阴影贴图）+ 轮廓光 0.4（带色偏）
+2. **统一材质语言**：全部 MeshStandardMaterial，emissive 0.4–0.5 + metalness 0.3 + roughness 0.7，全场一致
+3. **软阴影**：PCFSoftShadowMap + ShadowMaterial 地面（opacity 0.3），所有物体 castShadow
+4. **渐变天空**：canvas 渐变贴图当 scene.background，不用纯色
+5. **高角度跟随相机**：FOV 60，位置 (0,8,10)，lookAt 视点前方，跑道透视收敛
+6. **文字用 canvas 贴图**，不直接用 DOM 覆盖 3D 场景
+
+### 第二档（有资产时上）
+
+- PBR 贴图组（每表面）：diffuse + normal + ORM（G=粗糙度 B=金属度）+ AO + emissive
+- 雾（Fog）营造纵深；ACESFilmicToneMapping + 曝光 1.1 + sRGB 输出
+- 角色用 Quaternius 式免费 GLB（动画内嵌），集中管理 URL 列表 + fallback
+
+### 通用
+
+- 自适应画质：移动端降阴影（PCF）、关抗锯齿、降灯光强度
+- Three.js 版本：生成时取当前稳定版并在 importmap pin 死（已发布游戏不受上游影响）
